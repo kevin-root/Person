@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.PersonMapper">
+
+
+	<resultMap id="map" type="Person">
+		<association property="id" column="id"></association>
+	</resultMap>
+
+	<select id="findAll" resultType="Person" resultMap="map">
+		select * from person
+	</select>
+
+
+	<select id="get" resultType="int">
+		select  * from person where id=#{id};
+	</select>
+
+
+	<update id="update" parameterType="Person">
+
+		update rank=#{rank},age=#{age} from person where id=#{id}
+
+	</update>
+
+</mapper>

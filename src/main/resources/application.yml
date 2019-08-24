@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/person?serverTimezone=UTC
+    username: root
+    password: ok
+  thymeleaf:
+    perfix: classpath:templates/
+    suffix: .html
+    cache: false
+
+mybatis:
+  typealiases-package: com.example.demo.entity
+  configuration:
+    auto-mapping-behavior: full
+  mapper-locations: classpath:mapping/*.xml
+
